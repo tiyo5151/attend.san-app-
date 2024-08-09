@@ -1,9 +1,9 @@
 import React from 'react';
 import { View, StyleSheet } from 'react-native';
-import { TodoList } from '../../src/components/TodoList';
-import { useTodos } from '../../src/hooks/useTodos';
+import { TodoList } from '../components/TodoList';
+import { useTodos } from '../hooks/useTodos';
 
-export default function HomeScreen() {
+export const HomeScreen: React.FC = () => {
   const { todos, toggleTodo, deleteTodo } = useTodos();
 
   return (
@@ -11,7 +11,7 @@ export default function HomeScreen() {
       <TodoList todos={todos} onToggle={toggleTodo} onDelete={deleteTodo} />
     </View>
   );
-}
+};
 
 const styles = StyleSheet.create({
   container: {
